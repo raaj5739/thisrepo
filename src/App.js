@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Nevbar from './Components/Nevbar';
 import TextForm from './Components/TextForm';
-import Alert from './Components/Alert';
+// import Alert from './Components/Alert';
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // import About from './Components/About';
@@ -13,7 +13,7 @@ import Alert from './Components/Alert';
 function App() {
 
 const [mode, setMode]= useState('light');
-const [alert, setAlert]=useState(null);
+// const [alert, setAlert]=useState(null);
 
 const showAlert = (message,type) => {
   setAlert({
@@ -31,12 +31,12 @@ const toggleMode = () => {
     setMode("dark");
     document.body.style.backgroundColor = "black";
     document.body.style.color = "white";
-    showAlert("darkmode has been enabled","success");
+    // showAlert("darkmode has been enabled","success");
   } else {
     setMode("light");
     document.body.style.backgroundColor = "white";
     document.body.style.color = "black";
-    showAlert("darkmode has been desabled","success");
+    // showAlert("darkmode has been desabled","success");
 
   }
 };
