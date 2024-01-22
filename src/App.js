@@ -15,10 +15,10 @@ function App() {
 const [mode, setMode]= useState('light');
 // const [alert, setAlert]=useState(null);
 
-const showAlert = (message,type) => {
-  setAlert({
-    msg: message,
-    type: type,
+// const showAlert = (message,type) => {
+//   setAlert({
+//     msg: message,
+//     type: type,
   })
   // setTimeout(() => {
   //   showAlert(null);
