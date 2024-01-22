@@ -20,9 +20,9 @@ const showAlert = (message,type) => {
     msg: message,
     type: type,
   })
-  setTimeout(() => {
-    showAlert(null);
-  }, 30000);
+  // setTimeout(() => {
+  //   showAlert(null);
+  // }, 30000);
 
 };
 
