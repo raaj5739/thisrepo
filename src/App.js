@@ -13,7 +13,7 @@ import Alert from './Components/Alert';
 function App() {
 
 const [mode, setMode]= useState('light');
-// const [alert, setAlert]=useState(null);
+const [alert, setAlert]=useState(null);
 
 const showAlert = (message,type) => {
   setAlert({
