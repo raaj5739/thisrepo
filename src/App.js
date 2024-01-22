@@ -13,12 +13,12 @@ import Alert from './Components/Alert';
 function App() {
 
 const [mode, setMode]= useState('light');
-const [alert, setAlert]=useState(null);
+// const [alert, setAlert]=useState(null);
 
-const showAlert = (message,type) => {
-  setAlert({
-    msg: message,
-    type: type,
+// const showAlert = (message,type) => {
+//   setAlert({
+//     msg: message,
+//     type: type,
   })
   // setTimeout(() => {
   //   showAlert(null);
@@ -31,12 +31,12 @@ const toggleMode = () => {
     setMode("dark");
     document.body.style.backgroundColor = "black";
     document.body.style.color = "white";
-    showAlert("darkmode has been enabled","success");
+    // showAlert("darkmode has been enabled","success");
   } else {
     setMode("light");
     document.body.style.backgroundColor = "white";
     document.body.style.color = "black";
-    showAlert("darkmode has been desabled","success");
+    // showAlert("darkmode has been desabled","success");
 
   }
 };
