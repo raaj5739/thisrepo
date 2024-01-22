@@ -10,7 +10,7 @@ import TextForm from './Components/TextForm';
 // import styles from'./public.button.css'; // Import the CSS file
 
 
-function App() {
+function App() {{
 
 const [mode, setMode]= useState('light');
 // const [alert, setAlert]=useState(null);
@@ -19,7 +19,7 @@ const [mode, setMode]= useState('light');
 //   setAlert({
 //     msg: message,
 //     type: type,
-  })
+  // })
   // setTimeout(() => {
   //   showAlert(null);
   // }, 30000);
