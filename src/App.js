@@ -50,7 +50,7 @@ return (
       mode={mode}
       toggleMode={toggleMode}
     />
-    <Alert alert={alert} />
+    {/* <Alert alert={alert} /> */}
     <div className="container ">
       <TextForm showAlert={showAlert} heading="Enter the text here" /> 
       {/* <About/> */}
