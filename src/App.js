@@ -22,7 +22,7 @@ const showAlert = (message,type) => {
   })
   setTimeout(() => {
     setAlert(null);
-  }, 3000);
+  }, 1500);
 
 };
 
