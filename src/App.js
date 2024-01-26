@@ -3,9 +3,9 @@ import './App.css';
 import Nevbar from './Components/Nevbar';
 import TextForm from './Components/TextForm';
 import Alert from './Components/Alert';
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// import About from './Components/About';
+import About from './Components/About';
 // import styles from './Component.button.css'; 
 // import styles from'./public.button.css'; // Import the CSS file
 
@@ -43,26 +43,40 @@ const toggleMode = () => {
 
 return (
   <>
-      {/* <Router> */}
-    <Nevbar
-      title="Textutils"
-      About="About here"
-      mode={mode}
-      toggleMode={toggleMode}
-    />
-    <Alert alert={alert} />
-    <div className="container ">
-      <TextForm showAlert={showAlert} heading="Enter the text here" /> 
-      {/* <About/> */}
-{/* 
+    <Router>
+      <Nevbar
+        title="Textutils"
+        About="About here"
+        mode={mode}
+        toggleMode={toggleMode}
+      />
+      <Alert alert={alert} />
+      <div className="container ">
+        {/* <TextForm showAlert={showAlert} heading="Enter the text here" />  */}
+        {/* <About/> */}
+
         <Routes>
-          <Route path="/" element={<TextForm showAlert={showAlert} heading="Enter the text here" mode={mode}/> }/>
-         
-          <Route path="/About" element={<About />}/>
-        </Routes> */}
-    </div>
-      {/* </Router>  */}
-  </> 
+          <Route
+            path="/"
+            element={
+              <TextForm
+                showAlert={showAlert}
+                heading="Enter the text here"
+                mode={mode}
+              />
+            }
+          />
+
+          <Route
+            path="/About"
+            element={
+            <About/>
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
+  </>
 );
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export default function Nevbar(props) {
@@ -9,9 +9,9 @@ export default function Nevbar(props) {
       className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           {props.title}
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -26,24 +26,24 @@ export default function Nevbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
+              <Link className="nav-link active" aria-current="page" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item ">
-              <a className="nav-link active" href="/About">
+              <Link className="nav-link active" to="/About">
                 {props.About}
-              </a>
+              </Link>
             </li>
             {/* <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <Link className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
-          </a>
+          </Link>
           <ul className="dropdown-menu"> */}
             <li className="nav-item ">
-              <a className="nav-link active" href="https://www.facebook.com/">
+              <Link className="nav-link active" to="https://www.facebook.com/">
                 facebook
-              </a>
+              </Link>
             </li>
           </ul>
           {/* <form className="d-flex" role="search">

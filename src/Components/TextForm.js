@@ -36,20 +36,26 @@ export default function TextForm(props) {
     
 
   };
+      const handleCopy = () => {
+        navigator.clipboard.writeText(text);
+        props.showAlert("Copied to Clipboard!", "success");
+      };
 
   const [text, settext] = useState(
     "you can write here to converet to upper and lowercase"
   );
   
+      const handleExtraSpaces = () => {
+        let newText = text.split(/[ ]+/);
+        settext(newText.join(" "));
+        props.showAlert("Extra spaces removed!", "success");
+      };
 
   return (
     <>
       <div>
         <h1>{props.heading}</h1>
-        <div
-          className="mb-4"
-      
-        >
+        <div className="mb-4">
           <textarea
             className="form-control"
             value={text}
@@ -61,32 +67,74 @@ export default function TextForm(props) {
             rows="9"
           ></textarea>
         </div>
-        <button className="btn1" onClick={handleonclick1}>
+        <button
+          disabled={text.length === 0}
+          className="btn1"
+          onClick={handleonclick1}
+        >
           {" "}
           touppercase
         </button>
-        <button className="btn2" onClick={handleonclick2}>
+        <button
+          disabled={text.length === 0}
+          className="btn2"
+          onClick={handleonclick2}
+        >
           {" "}
           tolowercase
         </button>
-        <button className="btninverse" onClick={handleinverseclick2}>
+        <button
+          disabled={text.length === 0}
+          className="btninverse"
+          onClick={handleinverseclick2}
+        >
           {" "}
           inverse it
         </button>
-        <button className="btnclear" onClick={handleclearclick2}>
+        <button
+          disabled={text.length === 0}
+          className="btnclear"
+          onClick={handleclearclick2}
+        >
           {" "}
           clear it
+        </button>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleCopy}
+        >
+          Copy Text
+        </button>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleExtraSpaces}
+        >
+          Remove Extra Spaces
         </button>
       </div>
       {/* <div className="container my-2"> */}
       <h2>your text summery</h2>
       <p>
         {" "}
-        {text.split(" ").length} words and {text.length} letters
+        {
+          text.split(/\s+/).filter((element) => {
+            return element.length !== 0;
+          }).length
+        }{" "}
+        words and {text.length} letters
       </p>
-      <p> {0.008 * text.split(" ").length} minut read</p>
+      <p>
+        {" "}
+        {0.008 *
+          text.split(/\s+/).filter((element) => {
+            return element.length !== 0;
+          }).length}{" "}
+        Minutes read
+      </p>
       <h2>preview</h2>
-      <p>{text.length>0?text:"Enter something to previeww the text"}</p>
+      <p>{text.length > 0 ? text : "Enter something to previeww the text"}</p>
 
       {/* </div>   */}
     </>
